@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic Mentors, Leadership, and Faculty Directory for the Department of Computer Engineering at Sinhgad Institute of Technology (SIT), Lonavala.">
+  <meta name="keywords" content="ACES Faculties, SIT Lonavala, Computer Engineering Faculty, Dr Mantri, Prof Nimbekar, Sinhgad Institute, Engineering Mentors">
+  <title>Faculty Directory &amp; Mentors | Department of Computer Engineering - ACES SIT Lonavala</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/aces-logo.png">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- SVG Gradient Definitions -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="brandGradientSvg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0284c7" />
+        <stop offset="50%" stop-color="#4f46e5" />
+        <stop offset="100%" stop-color="#db2777" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Top Viewport Scroll Progress Bar -->
+  <div id="scroll-progress-container" class="scroll-progress-container" aria-hidden="true">
+    <div id="scroll-progress-bar" class="scroll-progress-bar">
+      <div class="scroll-progress-glow"></div>
+    </div>
+  </div>
+
+  <!-- Background Ambient Glow & Mesh -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-mesh" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       1. OFFICIAL INSTITUTIONAL LETTERHEAD HEADER
+       ======================================================================== -->
+  <header class="institutional-letterhead-wrapper" id="top-letterhead">
+    <div class="letterhead-container">
+      
+      <div class="letterhead-top-row">
+        <!-- Left: Official ACES Logo -->
+        <div class="letterhead-logo-aces">
+          <a href="index.html" title="ACES - Association of Computer Engineering Students">
+            <img src="assets/aces-logo.png" alt="ACES Logo" class="aces-official-logo-img">
+          </a>
+        </div>
+
+        <!-- Center: Institutional Accreditation & Affiliation -->
+        <div class="letterhead-center-text">
+          <div class="society-title">SINHGAD TECHNICAL EDUCATION SOCIETY'S</div>
+          <h1 class="institute-name">SINHGAD INSTITUTE OF TECHNOLOGY</h1>
+          <div class="affiliation-text">(Affiliated to Savitribai Phule Pune University, Pune &amp; Approved by AICTE)</div>
+          <div class="campus-address">Gat No. 309/310, off Mumbai-Pune Expressway, Kusgaon (Bk), Lonavala, Pune – 410401</div>
+        </div>
+
+        <!-- Right: Official Sinhgad Institutes Logo -->
+        <div class="letterhead-logo-sinhgad">
+          <a href="https://sit.sinhgad.edu/" target="_blank" rel="noopener noreferrer" title="Sinhgad Institutes">
+            <img src="assets/sinhgad-logo.png" alt="Sinhgad Institutes Logo" class="sinhgad-official-logo-img">
+          </a>
+        </div>
+      </div>
+
+      <!-- Lower Letterhead Ribbon -->
+      <div class="letterhead-ribbon">
+        <span class="ribbon-text">ASSOCIATION OF COMPUTER ENGINEERING STUDENTS</span>
+        <span class="ribbon-tag">Dept. of Computer Engineering &bull; SIT Lonavala</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. STICKY GLASS NAVIGATION BAR
+       ======================================================================== -->
+  <nav class="sticky-nav-bar" id="sticky-nav" aria-label="Main Navigation">
+    <div class="sticky-nav-inner">
+      <a href="index.html" class="nav-brand-mini">
+        <img src="assets/aces-logo.png" alt="ACES Emblem" class="mini-aces-logo">
+        <span>ACES <span style="font-weight: 400; color: var(--cyan-accent); font-size: 0.9rem;">SIT</span></span>
+      </a>
+
+      <ul class="nav-links-menu">
+        <li class="nav-pill-item"><a href="index.html#home">Home</a></li>
+        <li class="nav-pill-item"><a href="index.html#about">About ACES</a></li>
+        <li class="nav-pill-item"><a href="index.html#vision">Vision &amp; Mission</a></li>
+        <li class="nav-pill-item"><a href="index.html#events">Events</a></li>
+        <li class="nav-pill-item"><a href="faculties.html" class="active">Faculties</a></li>
+        <li class="nav-pill-item"><a href="council.html">Student Council</a></li>
+        <li class="nav-pill-item"><a href="index.html#contact">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <a href="index.html#contact" class="btn btn-primary nav-contact-btn" style="padding: 0.45rem 1.15rem; font-size: 0.82rem; border-radius: 9999px;">
+        <span>Contact Dept</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       3. SUBPAGE HERO & BREADCRUMB
+       ======================================================================== -->
+  <main class="subpage-hero">
+    <div class="container">
+      <div class="breadcrumb-nav">
+        <a href="index.html">Home</a>
+        <span>&bull;</span>
+        <span style="color: var(--text-main); font-weight: 700;">Department Faculties &amp; Mentors</span>
+      </div>
+
+      <span class="section-tag">Department Leadership &amp; Faculty Directory</span>
+      <h1 class="subpage-title">Academic Mentors &amp; Faculty</h1>
+      <p class="subpage-desc">
+        Distinguished academicians, industry researchers, and dedicated laboratory mentors guiding the Computer Engineering scholars of Sinhgad Institute of Technology, Lonavala.
+      </p>
+
+      <!-- Quick Metrics Bar -->
+      <div class="subpage-stats-bar">
+        <div class="subpage-stat-badge">
+          <strong>13</strong> Mentors &amp; Staff Members
+        </div>
+        <div class="subpage-stat-badge">
+          <strong>100%</strong> Ph.D. &amp; Masters Qualified Faculty
+        </div>
+        <div class="subpage-stat-badge">
+          <strong>NAAC Grade 'A'</strong> Accredited Campus
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       4. FACULTY DIRECTORY & FILTER SECTION
+       ======================================================================== -->
+  <section class="section-block" style="padding-top: 0;">
+    <div class="container">
+      
+      <!-- Category Filter Tabs -->
+      <div class="events-filter-bar faculty-filter-bar" style="margin-bottom: 2.5rem;">
+        <button type="button" class="filter-btn active" data-faculty-filter="all">All Mentors &amp; Staff (13)</button>
+        <button type="button" class="filter-btn" data-faculty-filter="leadership">Institutional Leadership (4)</button>
+        <button type="button" class="filter-btn" data-faculty-filter="professors">Professors &amp; Faculty (5)</button>
+        <button type="button" class="filter-btn" data-faculty-filter="staff">Technical &amp; Lab Staff (4)</button>
+      </div>
+
+      <!-- Responsive Grid for all 13 Faculty Cards -->
+      <div class="faculty-grid">
+        <div class="faculty-scroll-card glass-card" data-faculty-category="leadership" data-faculty-id="mantri">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-principal.jpg" alt="Dr. D. S. Mantri - Principal SIT Lonavala" class="faculty-img">
+              <span class="faculty-role-tag">Principal &bull; SIT Lonavala</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Dr. D. S. Mantri</h3>
+              <div class="faculty-designation">Principal, Sinhgad Institute of Technology</div>
+              <p class="faculty-bio">
+                Guiding SIT Lonavala with visionary leadership, academic benchmarks, student council support, and university accreditations across engineering disciplines.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Ph.D., M.Tech</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="mantri">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="leadership" data-faculty-id="gaikwad">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-vice-principal.jpg" alt="Dr. S. M. Gaikwad - Vice Principal SIT Lonavala" class="faculty-img">
+              <span class="faculty-role-tag">Vice Principal</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Dr. S. M. Gaikwad</h3>
+              <div class="faculty-designation">Vice Principal, Sinhgad Institute of Technology</div>
+              <p class="faculty-bio">
+                Vice Principal guiding institutional governance, academic administration, university curriculum delivery, and student technical bodies.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Ph.D. &bull; Senior Academician</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="gaikwad">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="professors" data-faculty-id="nimbekar">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-nimbekar.jpg" alt="Prof. S. B. Nimbekar Sir - Associate Professor & Head" class="faculty-img">
+              <span class="faculty-role-tag">Associate Professor &amp; Head</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Prof. S. B. Nimbekar Sir</h3>
+              <div class="faculty-designation">Associate Professor &amp; Head (HOD)</div>
+              <p class="faculty-bio">
+                An experienced academic in the Computer Engineering department, with a background in electronics and research interests in signal processing and neural processing.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">M.E. (Electronics); Ph.D. (p)</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="nimbekar">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="leadership" data-faculty-id="chaudhari">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-chaudhari.jpg" alt="Dr. M. S. Chaudhari Sir - Professor & Dean R&D" class="faculty-img">
+              <span class="faculty-role-tag">Professor &amp; Dean R&amp;D</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Dr. M. S. Chaudhari Sir</h3>
+              <div class="faculty-designation">Professor &amp; Dean R&amp;D</div>
+              <p class="faculty-bio">
+                An experienced academic and research professional with expertise in Communication and Computer Engineering. Research interests include IoT and Artificial Intelligence.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Ph.D. (Comm &amp; Comp Engg)</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="chaudhari">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="leadership" data-faculty-id="raut">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-tpo.jpg" alt="Prof. Mayur Raut - Training & Placement Officer" class="faculty-img">
+              <span class="faculty-role-tag">Training &amp; Placement Officer</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Prof. Mayur Raut</h3>
+              <div class="faculty-designation">Training &amp; Placement Officer (T.P.O.)</div>
+              <p class="faculty-bio">
+                Directing campus placements, industry internships, corporate outreach, and technical aptitude enhancement bootcamps for student career success.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Head, T&amp;P Cell</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="raut">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="professors" data-faculty-id="patil">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-patil.jpg" alt="Prof. N. K. Patil Sir - Assistant Professor & NBA/NAAC Head" class="faculty-img">
+              <span class="faculty-role-tag">Assistant Professor &amp; NBA/NAAC Head</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Prof. N. K. Patil Sir</h3>
+              <div class="faculty-designation">Assistant Professor &amp; NBA/NAAC Head</div>
+              <p class="faculty-bio">
+                An experienced computer engineering educator whose listed areas of expertise include computer networks and computer security. Contributes to departmental academic activities.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">M.E. (Computer Engg)</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="patil">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="professors" data-faculty-id="chavan">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-chavan.jpg?v=2" alt="Prof. V. M. Chavan Sir - Assistant Professor & Assistant CEO" class="faculty-img">
+              <span class="faculty-role-tag">Assistant Professor &amp; Assistant CEO</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Prof. V. M. Chavan Sir</h3>
+              <div class="faculty-designation">Assistant Professor &amp; Assistant CEO</div>
+              <p class="faculty-bio">
+                A faculty member with a background in Electronics and Telecommunication engineering. Listed technical interests include embedded systems and VLSI, supporting practical learning.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">M.E. (E&amp;TC)</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="chavan">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="professors" data-faculty-id="udawant">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-udawant.jpg?v=2" alt="Mr. A. P. Udawant Sir - Assistant Professor" class="faculty-img">
+              <span class="faculty-role-tag">Assistant Professor</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Mr. A. P. Udawant Sir</h3>
+              <div class="faculty-designation">Assistant Professor</div>
+              <p class="faculty-bio">
+                Faculty member in the Department of Computer Engineering contributing to student laboratory sessions, technical problem-solving labs, and curriculum instruction.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Computer Engineering</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="udawant">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="professors" data-faculty-id="palaskar">
+            <div class="faculty-image-box">
+              <img src="assets/faculty-palaskar.jpg?v=2" alt="Mr. Umesh Palaskar Sir - Assistant Professor" class="faculty-img">
+              <span class="faculty-role-tag">Assistant Professor</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Mr. Umesh Palaskar Sir</h3>
+              <div class="faculty-designation">Assistant Professor</div>
+              <p class="faculty-bio">
+                Faculty member contributing to academic teaching, practical laboratory coordination, and student project mentorship at Sinhgad Institute of Technology.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Computer Engineering</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="palaskar">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="staff" data-faculty-id="asmita">
+            <div class="faculty-image-box">
+              <img src="assets/staff-asmita.jpg?v=2" alt="Ms. Asmita Deshmukh - Lab Assistant" class="faculty-img">
+              <span class="faculty-role-tag">Lab Assistant</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Ms. Asmita Deshmukh</h3>
+              <div class="faculty-designation">Lab Assistant (Ms. Asmita Atul Deshmukh)</div>
+              <p class="faculty-bio">
+                Supports practical laboratory activities and the day-to-day functioning of computer engineering labs, helping students and faculty use laboratory facilities for hands-on learning.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">B.E. (CS); Dip. (Ind. Elec)</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="asmita">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="staff" data-faculty-id="mulani">
+            <div class="faculty-image-box">
+              <img src="assets/staff-mulani.jpg?v=2" alt="Ms. Nilofar Mulani - Lab Assistant" class="faculty-img">
+              <span class="faculty-role-tag">Technical / Lab Assistant</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Ms. Nilofar Mulani</h3>
+              <div class="faculty-designation">Lab Assistant / Technical Assistant</div>
+              <p class="faculty-bio">
+                Supports technical and laboratory activities within the department, contributing to the smooth operation of practical sessions and student learning.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">MCA</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="mulani">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="staff" data-faculty-id="pise">
+            <div class="faculty-image-box">
+              <img src="assets/staff-pise.jpg" alt="Mr. Santaji S. Pise - Technical Assistant" class="faculty-img">
+              <span class="faculty-role-tag">Technical Assistant</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Mr. Santaji S. Pise</h3>
+              <div class="faculty-designation">Technical Assistant (Mr. Santajee Sadhu Pise)</div>
+              <p class="faculty-bio">
+                Supports technical operations and practical learning activities in the department. Technical background includes computer applications and cyber law.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">MCA; Dip. in Cyber Law</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="pise">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+        <div class="faculty-scroll-card glass-card" data-faculty-category="staff" data-faculty-id="gund">
+            <div class="faculty-image-box">
+              <img src="assets/staff-gund-profile.jpg" alt="Mr. Prakash Gund - Department Support" class="faculty-img">
+              <span class="faculty-role-tag">Departmental Operations Support</span>
+            </div>
+            <div class="faculty-content">
+              <h3 class="faculty-name">Mr. Prakash Gund</h3>
+              <div class="faculty-designation">Department Support (Mr. Prakash Gangaram Gund)</div>
+              <p class="faculty-bio">
+                Supports day-to-day departmental operations and general office activities, helping maintain an organized and functional academic environment.
+              </p>
+              <div class="faculty-footer">
+                <span style="font-size: 0.78rem; color: var(--text-dim); font-weight: 600;">Departmental Support</span>
+                <button type="button" class="btn-faculty-detail" data-faculty-id="gund">View Profile &rarr;</button>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <!-- Department Highlight Callout -->
+      <div class="section-cta-banner glass-card">
+        <div class="section-cta-content">
+          <h4>Explore Student Innovation &amp; Council Leadership</h4>
+          <p>Discover the 26 student council members across Executive Core, Core Team, and 8 specialized domains.</p>
+        </div>
+        <a href="council.html" class="btn btn-primary" style="padding: 0.75rem 1.6rem; font-size: 0.92rem; border-radius: 9999px;">
+          Meet Student Council &rarr;
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        &copy; 2026 <strong>ACES</strong> &bull; Association of Computer Engineering Students. All Rights Reserved.
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-dim);">
+        Sinhgad Institute of Technology, Lonavala &bull; Affiliated to SPPU &amp; AICTE
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       6. INTERACTIVE FACULTY DETAILS MODAL
+       ======================================================================== -->
+  <div id="faculty-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-faculty-name">
+    <div class="modal-glass-box" style="max-width: 720px;">
+      <button type="button" class="modal-close-btn" id="modal-faculty-close-btn" aria-label="Close Modal">&times;</button>
+      
+      <div style="display: grid; grid-template-columns: 180px 1fr; gap: 1.75rem; align-items: start; margin-bottom: 1.5rem;" class="modal-faculty-top">
+        <div style="width: 100%; aspect-ratio: 1/1; border-radius: 18px; overflow: hidden; border: 1px solid var(--glass-border); box-shadow: var(--glass-shadow); background: #f1f5f9;">
+          <img id="modal-faculty-img" src="assets/faculty-principal.jpg" alt="Faculty Profile" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <div>
+          <span style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(99, 102, 241, 0.12); color: var(--cyan-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;" id="modal-faculty-badge">
+            Leadership
+          </span>
+          <h3 id="modal-faculty-name" style="font-family: 'Outfit', sans-serif; font-size: 1.55rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.25rem;">
+            Faculty Name
+          </h3>
+          <div id="modal-faculty-role" style="font-size: 0.92rem; font-weight: 700; color: var(--sinhgad-gold); margin-bottom: 0.75rem;">
+            Designation
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">
+            <strong style="color: var(--text-main);">Qualifications:</strong> <span id="modal-faculty-qualifications">M.E., Ph.D.</span>
+          </div>
+          <div style="font-size: 0.85rem; color: var(--text-muted);">
+            <strong style="color: var(--text-main);">Institution:</strong> <span id="modal-faculty-institution">SIT Lonavala</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="border-top: 1px solid var(--glass-border-light); padding-top: 1.25rem; margin-bottom: 1.5rem;">
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">
+          Detailed Description &amp; Areas of Expertise
+        </h4>
+        <p id="modal-faculty-desc" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65;">
+          Faculty description details.
+        </p>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('modal-faculty-close-btn').click()">Close Details</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Circular Scroll Progress & Back-to-Top Widget -->
+  <div id="floating-scroll-widget" class="floating-scroll-widget" aria-label="Scroll to top navigation">
+    <button id="scroll-to-top-btn" class="scroll-to-top-btn" title="Back to top" aria-label="Scroll back to top">
+      <svg class="progress-ring-svg" width="58" height="58" viewBox="0 0 58 58">
+        <circle class="progress-ring-bg" cx="29" cy="29" r="23" stroke-width="3"></circle>
+        <circle id="progress-ring-circle" class="progress-ring-circle" cx="29" cy="29" r="23" stroke-width="3"></circle>
+      </svg>
+      <div class="scroll-btn-inner">
+        <svg class="scroll-arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+        <span id="scroll-percent-text" class="scroll-percent-text">0%</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>

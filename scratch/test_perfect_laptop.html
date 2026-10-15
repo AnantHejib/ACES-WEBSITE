@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Perfect 3D Laptop Test</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 300vh;
+      background: #080d1a;
+      color: #fff;
+      font-family: system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .laptop-stage {
+      position: fixed;
+      top: 50%;
+      left: 60%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      height: 340px;
+      perspective: 1200px;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    .laptop-3d-rig {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transform: rotateX(50deg) rotateY(-15deg) rotateZ(5deg);
+      transition: transform 0.1s ease-out;
+    }
+
+    /* 1. Base (Keyboard & Trackpad) lying on desk */
+    .laptop-base {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 460px;
+      height: 270px;
+      background: linear-gradient(135deg, #273549, #0f172a 80%);
+      border-radius: 18px;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 35px 70px rgba(0, 0, 0, 0.7), 0 0 40px rgba(99, 102, 241, 0.25);
+      padding: 14px 18px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transform-style: preserve-3d;
+    }
+
+    .laptop-keyboard {
+      width: 100%;
+      height: 140px;
+      background: #050b14;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 8px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .key-row {
+      display: flex;
+      gap: 4px;
+      height: 18px;
+    }
+
+    .key {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    }
+    .key.space { flex: 4; }
+
+    .laptop-trackpad {
+      align-self: center;
+      width: 130px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* 2. Screen Flap - Attached to back edge (top: 0 of base) */
+    .laptop-screen-flap {
+      position: absolute;
+      bottom: 270px; /* Positioned right at the hinge at the back edge of the base */
+      left: 0;
+      width: 460px;
+      height: 270px;
+      transform-origin: bottom center; /* Hinge is at the bottom of the screen! */
+      transform-style: preserve-3d;
+      transform: rotateX(-80deg); /* When open, screen stands upright! */
+      transition: transform 0.1s ease-out;
+    }
+
+    /* Inner Screen Face (Facing User when Open) */
+    .screen-inner-display {
+      position: absolute;
+      inset: 0;
+      background: #020617;
+      border-radius: 16px 16px 4px 4px;
+      border: 2px solid rgba(99, 102, 241, 0.5);
+      box-shadow: 0 0 45px rgba(99, 102, 241, 0.4), inset 0 0 30px rgba(99, 102, 241, 0.2);
+      padding: 12px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      transform-style: preserve-3d;
+    }
+
+    .webcam-dot {
+      width: 6px;
+      height: 6px;
+      background: #38bdf8;
+      border-radius: 50%;
+      align-self: center;
+      margin-bottom: 8px;
+      box-shadow: 0 0 6px #38bdf8;
+    }
+
+    .screen-terminal-box {
+      flex: 1;
+      background: #040914;
+      border-radius: 10px;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      padding: 12px 14px;
+      box-sizing: border-box;
+      font-family: monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      color: #e2e8f0;
+      overflow: hidden;
+    }
+
+    .t-dots {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 6px;
+      align-items: center;
+    }
+    .t-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .t-dot.r { background: #ef4444; }
+    .t-dot.y { background: #f59e0b; }
+    .t-dot.g { background: #10b981; }
+    .t-title { font-size: 10px; color: #94a3b8; margin-left: 6px; }
+
+    /* Outer Shell on back of screen (seen if camera looks from behind) */
+    .screen-outer-shell {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #1e293b, #0f172a);
+      border-radius: 16px 16px 4px 4px;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+      transform: rotateY(180deg) translateZ(1px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .shell-logo {
+      width: 60px;
+      height: 60px;
+      filter: drop-shadow(0 0 12px rgba(99, 102, 241, 0.8));
+    }
+  </style>
+</head>
+<body>
+  <div class="laptop-stage" id="stage">
+    <div class="laptop-3d-rig" id="rig">
+      <!-- Screen Flap attached to back of base -->
+      <div class="laptop-screen-flap" id="screen-flap">
+        <div class="screen-inner-display">
+          <div class="webcam-dot"></div>
+          <div class="screen-terminal-box">
+            <div class="t-dots">
+              <span class="t-dot r"></span>
+              <span class="t-dot y"></span>
+              <span class="t-dot g"></span>
+              <span class="t-title">aces@sit-lonavala: ~/system</span>
+            </div>
+            <div style="color: #c084fc;">const ACES = new DepartmentEngine({</div>
+            <div style="padding-left: 10px; color: #94a3b8;">dept: <span style="color: #f59e0b;">"Computer Engineering"</span>,</div>
+            <div style="padding-left: 10px; color: #94a3b8;">status: <span style="color: #4ade80;">"Online &amp; Active"</span>,</div>
+            <div style="padding-left: 10px; color: #94a3b8;">events: [<span style="color: #38bdf8;">"Freshers 2k26"</span>, <span style="color: #f59e0b;">"GENESIS"</span>]</div>
+            <div style="color: #c084fc;">});</div>
+            <div style="color: #4ade80; margin-top: 6px;">aces.bootSequence(); // Ready</div>
+          </div>
+        </div>
+        <div class="screen-outer-shell">
+          <img src="assets/aces-logo.png" class="shell-logo" alt="ACES">
+        </div>
+      </div>
+
+      <!-- Keyboard Base -->
+      <div class="laptop-base">
+        <div class="laptop-keyboard">
+          <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+          <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+          <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+          <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key space"></div><div class="key"></div><div class="key"></div></div>
+        </div>
+        <div class="laptop-trackpad"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding: 40px; font-size: 2rem;">Scroll down to test flap angle and laptop flight</div>
+</body>
+</html>

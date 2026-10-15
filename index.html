@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official website of ACES (Association of Computer Engineering Students), the departmental student body of Computer Engineering at Sinhgad Institute of Technology (SIT), Lonavala.">
+  <meta name="keywords" content="ACES, Sinhgad Institute of Technology, SIT Lonavala, Computer Engineering, Student Club, STES, Events, Hackathon, Department Faculties">
+  <title>ACES | Association of Computer Engineering Students - SIT Lonavala</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/aces-logo.png">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       0. STARTUP SYSTEM BOOT PRELOADER ANIMATION
+       ======================================================================== -->
+  <div id="site-preloader" class="site-preloader" aria-label="Loading ACES SIT Website">
+    <div class="preloader-glass-card">
+      <div class="preloader-emblem-box">
+        <div class="preloader-orbit-ring ring-1"></div>
+        <div class="preloader-orbit-ring ring-2"></div>
+        <img src="assets/aces-logo.png" alt="ACES Official Emblem" class="preloader-aces-logo">
+      </div>
+      <span class="preloader-badge">SIT Lonavala &bull; STES</span>
+      <h2 class="preloader-brand-name">ACES SIT</h2>
+      <div class="preloader-motto">&ldquo;Association of Computer Engineering Students&rdquo;</div>
+      
+      <div class="preloader-progress-shell">
+        <div id="preloader-progress-bar" class="preloader-progress-fill"></div>
+      </div>
+      
+      <div class="preloader-status-row">
+        <span id="preloader-status-label">INITIALIZING SUBSYSTEMS...</span>
+        <span id="preloader-percent-label">0%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SVG Gradient Definitions for Circular Rings & Accents -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="brandGradientSvg" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0284c7" />
+        <stop offset="50%" stop-color="#4f46e5" />
+        <stop offset="100%" stop-color="#db2777" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- Top Viewport Scroll Progress Bar -->
+  <div id="scroll-progress-container" class="scroll-progress-container" aria-hidden="true">
+    <div id="scroll-progress-bar" class="scroll-progress-bar">
+      <div class="scroll-progress-glow"></div>
+    </div>
+  </div>
+
+  <!-- Background Ambient Glow & Mesh -->
+  <div class="ambient-glow" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="grid-mesh" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       0B. 3D SCROLL-DRIVEN BACKGROUND LAPTOP
+       Flap opens continuously in 3D perspective as you scroll top-to-bottom
+       ======================================================================== -->
+  <div id="scroll-laptop-bg" class="scroll-laptop-bg" aria-hidden="true">
+    <div class="laptop-3d-scene">
+      <div class="laptop-body" id="laptop-body">
+        
+        <!-- 1. Screen Flap (Hinged at the back edge of the keyboard base) -->
+        <div class="laptop-screen-flap" id="laptop-screen-flap">
+          
+          <!-- Inner Screen Display (Front face, facing viewer when open) -->
+          <div class="screen-inner-display" id="screen-inner-display">
+            <div class="webcam-dot"></div>
+            <div class="screen-terminal-box">
+              <div class="terminal-top-bar">
+                <span class="dot r"></span>
+                <span class="dot y"></span>
+                <span class="dot g"></span>
+                <span class="t-title">aces@sit-lonavala: ~/system</span>
+              </div>
+              <div class="term-line"><span class="term-c-purple">const</span> <span class="term-c-cyan">ACES</span> = <span class="term-c-green">new</span> DepartmentEngine({</div>
+              <div class="term-line indent"><span class="term-c-dim">dept:</span> <span class="term-c-gold">"Computer Engg"</span>,</div>
+              <div class="term-line indent"><span class="term-c-dim">status:</span> <span class="term-c-green">"Online &amp; Active"</span>,</div>
+              <div class="term-line indent"><span class="term-c-dim">events:</span> [<span class="term-c-gold">"Freshers 2k26"</span>, <span class="term-c-gold">"GENESIS"</span>]</div>
+              <div class="term-line">});</div>
+              <div class="term-line prompt"><span class="term-c-green">&gt; aces.bootSequence()</span>; <span class="term-c-dim">// Ready</span></div>
+            </div>
+          </div>
+
+          <!-- Outer Shell (Back of the screen, facing away when open) -->
+          <div class="screen-outer-shell" id="screen-outer-shell">
+            <img src="assets/aces-logo.png" alt="ACES" class="laptop-logo-back">
+            <span class="laptop-logo-text">ACES SIT</span>
+          </div>
+
+        </div>
+
+        <!-- 2. Keyboard Base (Lying flat on desk) -->
+        <div class="laptop-base">
+          <div class="laptop-hinge"></div>
+          <div class="laptop-keyboard">
+            <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+            <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+            <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div><div class="key"></div></div>
+            <div class="key-row"><div class="key"></div><div class="key"></div><div class="key"></div><div class="key space"></div><div class="key"></div><div class="key"></div></div>
+          </div>
+          <div class="laptop-trackpad"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       1. OFFICIAL INSTITUTIONAL LETTERHEAD HEADER
+       Matches official SIT Lonavala letterhead layout:
+       Left: ACES Logo | Center: SIT & STES Details | Right: Sinhgad Logo
+       ======================================================================== -->
+  <header class="institutional-letterhead-wrapper" id="top-letterhead">
+    <div class="letterhead-container">
+      
+      <!-- Top Letterhead Row -->
+      <div class="letterhead-top-row">
+        
+        <!-- Left: Official ACES Logo -->
+        <div class="letterhead-logo-aces">
+          <a href="#home" title="ACES - Association of Computer Engineering Students">
+            <img src="assets/aces-logo.png" alt="ACES - Association of Computer Engineering Students Logo" class="aces-official-logo-img">
+          </a>
+        </div>
+
+        <!-- Center: Institutional Accreditation & Affiliation -->
+        <div class="letterhead-center-text">
+          <div class="society-title">SINHGAD TECHNICAL EDUCATION SOCIETY'S</div>
+          <h1 class="institute-name">SINHGAD INSTITUTE OF TECHNOLOGY</h1>
+          <div class="affiliation-text">(Affiliated to Savitribai Phule Pune University, Pune &amp; Approved by AICTE)</div>
+          <div class="campus-address">Gat No. 309/310, off Mumbai-Pune Expressway, Kusgaon (Bk), Lonavala, Pune – 410401</div>
+        </div>
+
+        <!-- Right: Official Sinhgad Institutes Logo -->
+        <div class="letterhead-logo-sinhgad">
+          <a href="https://sit.sinhgad.edu/" target="_blank" rel="noopener noreferrer" title="Sinhgad Technical Education Society - Sinhgad Institutes">
+            <img src="assets/sinhgad-logo.png" alt="Sinhgad Institutes Logo" class="sinhgad-official-logo-img">
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Lower Letterhead Ribbon -->
+      <div class="letterhead-ribbon">
+        <span class="ribbon-text">ASSOCIATION OF COMPUTER ENGINEERING STUDENTS</span>
+        <span class="ribbon-tag">Dept. of Computer Engineering &bull; SIT Lonavala</span>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       2. STICKY GLASS NAVIGATION BAR
+       ======================================================================== -->
+  <nav class="sticky-nav-bar" id="sticky-nav" aria-label="Main Navigation">
+    <div class="sticky-nav-inner">
+      <a href="#home" class="nav-brand-mini">
+        <img src="assets/aces-logo.png" alt="ACES Emblem" class="mini-aces-logo">
+        <span>ACES <span style="font-weight: 400; color: var(--cyan-accent); font-size: 0.9rem;">SIT</span></span>
+      </a>
+
+      <ul class="nav-links-menu">
+        <li class="nav-pill-item"><a href="#home" class="active">Home</a></li>
+        <li class="nav-pill-item"><a href="#about">About ACES</a></li>
+        <li class="nav-pill-item"><a href="#vision">Vision &amp; Mission</a></li>
+        <li class="nav-pill-item"><a href="#events">Events</a></li>
+        <li class="nav-pill-item"><a href="faculties.html">Faculties</a></li>
+        <li class="nav-pill-item"><a href="council.html">Student Council</a></li>
+        <li class="nav-pill-item"><a href="#contact">Contact</a></li>
+      </ul>
+
+      <!-- CTA Button -->
+      <a href="#contact" class="btn btn-primary nav-contact-btn" style="padding: 0.45rem 1.15rem; font-size: 0.82rem; border-radius: 9999px;">
+        <span>Join ACES</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ========================================================================
+       3. HERO PORTFOLIO SECTION
+       ======================================================================== -->
+  <main id="home" class="hero-section">
+    <div class="container">
+      <div class="hero-glass-box scroll-reveal reveal-scale">
+        
+        <div class="hero-pill-badge">
+          <span class="live-dot"></span>
+          <span>Official Departmental Student Council &bull; Computer Engineering</span>
+        </div>
+
+        <h2 class="hero-title">
+          Empowering Next-Gen <br>
+          <span class="gradient-text">Computer Engineers</span>
+        </h2>
+
+        <p class="hero-subtitle">
+          Welcome to the official digital portfolio of <strong>ACES</strong> at <strong>Sinhgad Institute of Technology, Lonavala</strong>. We unite cutting-edge software innovation with vibrant cultural celebrations through hackathons, grand galas, and student leadership.
+        </p>
+
+        <!-- Stats Counters -->
+        <div class="hero-stats-row" id="hero-stats">
+          <div class="stat-glass-card scroll-reveal reveal-up delay-1">
+            <div class="stat-number" data-count="75" data-suffix="+">75+</div>
+            <div class="stat-label">Active Members</div>
+          </div>
+          <div class="stat-glass-card scroll-reveal reveal-up delay-2">
+            <div class="stat-number" data-count="5" data-suffix="+">5+</div>
+            <div class="stat-label">Events</div>
+          </div>
+          <div class="stat-glass-card scroll-reveal reveal-up delay-3">
+            <div class="stat-number" data-count="100" data-suffix="%">100%</div>
+            <div class="stat-label">Student-Driven</div>
+          </div>
+        </div>
+
+        <!-- Action CTAs -->
+        <div class="hero-actions">
+          <a href="#events" class="btn btn-primary">
+            <span>Explore Events &amp; Workshops</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#team" class="btn btn-glass">
+            <span>Meet The Council</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ========================================================================
+       4. ABOUT ACES SECTION & VISION / MISSION
+       ======================================================================== -->
+  <section id="about" class="section-block">
+    <div class="container">
+      
+      <div class="section-header scroll-reveal reveal-up">
+        <span class="section-tag">About The Association</span>
+        <h2 class="section-title">The Beating Heart of Computer Engineering</h2>
+        <p class="section-desc">Fostering technical curiosity, competitive coding acumen, vibrant cultural celebrations, and peer mentorship at Sinhgad Institute of Technology, Lonavala.</p>
+      </div>
+
+      <div class="about-grid">
+        
+        <!-- About Overview Card -->
+        <div class="about-main-card glass-card scroll-reveal reveal-left">
+          <div>
+            <div class="about-card-badge-row">
+              <span class="duo-tag duo-tag-tech">⚡ Technical Innovation</span>
+              <span class="duo-tag-separator">&bull;</span>
+              <span class="duo-tag duo-tag-cult">🎭 Cultural Events</span>
+            </div>
+
+            <h3 class="about-highlight-title">What is ACES?</h3>
+            
+            <p class="about-body-text">
+              The <strong>Association of Computer Engineering Students (ACES)</strong> is the official student body representing the Department of Computer Engineering at <strong>Sinhgad Institute of Technology (SIT), Lonavala</strong> under the esteemed Sinhgad Technical Education Society (STES).
+            </p>
+            
+            <p class="about-body-text">
+              ACES is the vibrant pulse of our department — harmonizing technological excellence with creative celebration. We organize premier national-level hackathons, coding leagues, and technical workshops, alongside high-energy <strong>departmental cultural festivals, live music, dance showcases, stage drama, and annual galas</strong>.
+            </p>
+            
+            <p class="about-body-text" style="margin-bottom: 1.5rem;">
+              Whether innovating code for real-world solutions or commanding the center stage, ACES empowers every student with confidence, leadership, and lifelong memories.
+            </p>
+          </div>
+
+          <!-- Feature Tag Chips -->
+          <div class="about-badges-list">
+            <span class="about-badge-item">💻 Hackathons &amp; Coding</span>
+            <span class="about-badge-item about-badge-cult">🎭 Cultural Fests &amp; Drama</span>
+            <span class="about-badge-item">🚀 Tech Workshops</span>
+            <span class="about-badge-item about-badge-cult">🎉 Annual Galas</span>
+          </div>
+        </div>
+
+        <!-- Vision & Mission Stack -->
+        <div class="vision-mission-stack" id="vision">
+          
+          <!-- Vision Card -->
+          <div class="vision-card glass-card scroll-reveal reveal-right delay-1">
+            <div class="card-heading-row">
+              <div class="card-icon-round">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polygon points="12 8 8 12 12 16 16 12 12 8"></polygon>
+                </svg>
+              </div>
+              <h3 class="card-heading-title">Our Vision</h3>
+            </div>
+            <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65;">
+              "To emerge as a premier departmental student forum that nurtures technically astute, culturally vibrant, ethical, and inventive computer engineers capable of solving complex global problems while celebrating creative excellence."
+            </p>
+          </div>
+
+          <!-- Mission Card -->
+          <div class="mission-card glass-card scroll-reveal reveal-right delay-2">
+            <div class="card-heading-row">
+              <div class="card-icon-round" style="background: linear-gradient(135deg, #06b6d4, #3b82f6);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <h3 class="card-heading-title">Our Mission</h3>
+            </div>
+            <ul class="mission-pillars-list">
+              <li class="mission-pillar-item">
+                <span class="pillar-bullet">&#10003;</span>
+                <span><strong>Technical Acumen:</strong> Provide experiential learning through hands-on workshops on AI, Cloud, Cyber Security, and Full-Stack frameworks.</span>
+              </li>
+              <li class="mission-pillar-item">
+                <span class="pillar-bullet">&#10003;</span>
+                <span><strong>Cultural &amp; Creative Expression:</strong> Celebrate artistic passions through grand cultural fests, live music, dance, theatre, and annual galas that build stage poise, confidence, and camaraderie.</span>
+              </li>
+              <li class="mission-pillar-item">
+                <span class="pillar-bullet">&#10003;</span>
+                <span><strong>Competitive Spirit:</strong> Host national symposiums, algorithmic code clashes, and collaborative 24-hour hackathons.</span>
+              </li>
+              <li class="mission-pillar-item">
+                <span class="pillar-bullet">&#10003;</span>
+                <span><strong>Industry Bridge:</strong> Connect students with tech alumni, corporate recruiters, and open-source project mentors.</span>
+              </li>
+              <li class="mission-pillar-item">
+                <span class="pillar-bullet">&#10003;</span>
+                <span><strong>Holistic Leadership:</strong> Instill professional ethics, effective communication, organizational management, and teamwork.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ========================================================================
+       5. FLAGSHIP DEPARTMENTAL EVENTS (Freshers Party 2k26 & GENESIS)
+       ======================================================================== -->
+  <section id="events" class="section-block">
+    <div class="container">
+      
+      <div class="section-header scroll-reveal reveal-up">
+        <span class="section-tag">Departmental Calendar</span>
+        <h2 class="section-title">Flagship Departmental Events</h2>
+        <p class="section-desc">Celebrating welcoming milestones, cultural galas, and hands-on cutting-edge workshops organized by ACES SIT Lonavala.</p>
+      </div>
+
+      <!-- Event Category Filter Bar -->
+      <div class="events-filter-bar">
+        <button type="button" class="filter-btn active" data-filter="all">All Events (2)</button>
+        <button type="button" class="filter-btn" data-filter="freshers">Freshers Party 2k26</button>
+        <button type="button" class="filter-btn" data-filter="genesis">GENESIS AI Workshop</button>
+      </div>
+
+      <!-- Events Grid with Thumbnails -->
+      <div class="events-grid">
+        
+        <!-- Event 1: Freshers Party 2k26 -->
+        <div class="event-card glass-card scroll-reveal reveal-up delay-1" data-category="freshers">
+          <div class="event-thumb-wrap">
+            <img src="assets/event-freshers.jpg" alt="Freshers Party 2k26 Poster" class="event-thumbnail-img">
+            <span class="event-badge-status status-upcoming">Celebration Gala</span>
+          </div>
+          <div class="event-content">
+            <div class="event-meta-row">
+              <span class="event-meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                February 25, 2026 (Wednesday)
+              </span>
+              <span>&bull;</span>
+              <span class="event-meta-item">1:30 PM &ndash; 4:00 PM</span>
+            </div>
+            <h3 class="event-card-title">Freshers Party 2k26: Grand Departmental Welcome</h3>
+            <p class="event-card-desc">
+              Welcoming the incoming Computer Engineering scholars with high-energy performances! Join us for Dance, Music, Fun, DJ Party &amp; lots more. Contact: Mohil Patil (7822875590).
+            </p>
+            <div class="event-card-footer">
+              <span class="event-venue-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                Building No 2 &ldquo;IT Seminar Hall&rdquo; SIT Lonavala
+              </span>
+              <button type="button" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" data-event-id="freshers">View Details</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Event 2: GENESIS Generative AI Workshop -->
+        <div class="event-card glass-card scroll-reveal reveal-up delay-2" data-category="genesis">
+          <div class="event-thumb-wrap">
+            <img src="assets/event-genesis.png" alt="ACES Presents GENESIS Gen AI Workshop Poster" class="event-thumbnail-img">
+            <span class="event-badge-status status-flagship">AI Workshop &bull; Certificate</span>
+          </div>
+          <div class="event-content">
+            <div class="event-meta-row">
+              <span class="event-meta-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                17 &ndash; 18 Oct (Sat &ndash; Sun)
+              </span>
+              <span>&bull;</span>
+              <span class="event-meta-item">10:00 AM Onwards</span>
+            </div>
+            <h3 class="event-card-title">GENESIS: Gen AI Workshop</h3>
+            <p class="event-card-desc">
+              From Ideas to Innovation. A hands-on workshop to explore the real-world potential of Generative AI. Workshop + Hands-on, Certificates &amp; Prizes provided. Exclusive for Computer Dept Students.
+            </p>
+            <div class="event-card-footer">
+              <span class="event-venue-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                IT Seminar Hall, SIT Lonavala
+              </span>
+              <button type="button" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" data-event-id="genesis">View Details</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. DEDICATED DEPARTMENT DIRECTORIES & PORTAL HUBS
+       Faculties & Student Council have dedicated multi-page hubs
+       ======================================================================== -->
+  <section id="directories" class="section-block" style="background: rgba(255, 255, 255, 0.015);">
+    <div class="container">
+      
+      <div class="section-header scroll-reveal reveal-up">
+        <span class="section-tag">Department Leadership &amp; Governance</span>
+        <h2 class="section-title">Faculties &amp; Student Council Hubs</h2>
+        <p class="section-desc">Access our dedicated directory hubs for distinguished faculty mentors and the official 26-member ACES student council leadership.</p>
+      </div>
+
+      <div class="directory-portals-grid">
+        
+        <!-- Faculty Hub Card -->
+        <a href="faculties.html" class="directory-portal-card scroll-reveal reveal-left">
+          <div>
+            <span class="portal-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              13 Faculty &amp; Staff Members
+            </span>
+            <h3 class="portal-title">Department Faculty &amp; Mentors</h3>
+            <p class="portal-desc">
+              Guided by Principal Dr. D. S. Mantri, Vice Principal Dr. S. M. Gaikwad, HOD Prof. S. B. Nimbekar, Dean R&amp;D Dr. M. S. Chaudhari, TPO Prof. Mayur Raut, and our accomplished teaching and technical laboratory mentors.
+            </p>
+            <ul class="portal-highlights-list">
+              <li><span class="dot"></span><span>Executive Leadership &amp; Administration</span></li>
+              <li><span class="dot"></span><span>Academic, Research &amp; Accreditation Mentors</span></li>
+              <li><span class="dot"></span><span>Technical Laboratory &amp; Department Support Specialists</span></li>
+            </ul>
+          </div>
+          <div class="portal-btn-row">
+            <span class="portal-action-text">
+              <span>Explore Faculty &amp; Staff Directory</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Student Council Hub Card -->
+        <a href="council.html" class="directory-portal-card scroll-reveal reveal-right">
+          <div>
+            <span class="portal-badge" style="color: var(--sinhgad-gold); background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.25);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              26 Student Leaders &bull; 3 Tiers
+            </span>
+            <h3 class="portal-title">ACES Student Council 2026</h3>
+            <p class="portal-desc">
+              Meet the 26-member student body driving algorithmic competitions, technical workshops, cultural galas, sports tournaments, and corporate industry linkages for Computer Engineering scholars.
+            </p>
+            <ul class="portal-highlights-list">
+              <li><span class="dot" style="background: var(--sinhgad-gold);"></span><span>Executive</span></li>
+              <li><span class="dot" style="background: var(--sinhgad-gold);"></span><span>Core</span></li>
+              <li><span class="dot" style="background: var(--sinhgad-gold);"></span><span>Head</span></li>
+            </ul>
+          </div>
+          <div class="portal-btn-row">
+            <span class="portal-action-text">
+              <span>Explore Student Council Directory</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. CONTACT & CAMPUS DETAILS
+       ======================================================================== -->
+  <section id="contact" class="section-block">
+    <div class="container">
+      <div class="contact-glass-card scroll-reveal reveal-scale">
+        
+        <div class="contact-info-col">
+          <span class="section-tag">Get In Touch</span>
+          <h3>Connect with ACES SIT</h3>
+          <p style="color: var(--text-muted); line-height: 1.6;">
+            Have questions regarding upcoming departmental events, domain recruitments, or corporate collaborations? We would love to hear from you.
+          </p>
+
+          <div class="contact-address-block">
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span><strong>Department of Computer Engineering</strong><br>Sinhgad Institute of Technology, Gat No. 309/310, Kusgaon (Bk), Lonavala, Pune – 410401</span>
+            </div>
+            <div class="contact-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <span>aces.sit@sinhgad.edu &bull; sit@sinhgad.edu</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-col">
+          <form onsubmit="event.preventDefault(); alert('Thank you! Your message has been sent to the ACES SIT Secretariat.');" style="display: flex; flex-direction: column; gap: 1rem;">
+            <input type="text" placeholder="Your Name / Student ID" required style="width: 100%; padding: 0.85rem 1.1rem; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); color: var(--text-main); font-family: inherit; font-size: 0.92rem; outline: none;">
+            <input type="email" placeholder="Your Official Email Address" required style="width: 100%; padding: 0.85rem 1.1rem; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); color: var(--text-main); font-family: inherit; font-size: 0.92rem; outline: none;">
+            <textarea rows="3" placeholder="Your Query or Collaboration Message" required style="width: 100%; padding: 0.85rem 1.1rem; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--glass-border); color: var(--text-main); font-family: inherit; font-size: 0.92rem; outline: none; resize: vertical;"></textarea>
+            <button type="submit" class="btn btn-primary" style="align-self: flex-start;">Send Message to ACES</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       9. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-copy">
+        &copy; 2026 <strong>ACES</strong> &bull; Association of Computer Engineering Students. All Rights Reserved.
+      </div>
+      <div style="font-size: 0.85rem; color: var(--text-dim);">
+        Sinhgad Institute of Technology, Lonavala &bull; Affiliated to SPPU &amp; AICTE
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       10. INTERACTIVE EVENT MODAL
+       ======================================================================== -->
+  <div id="event-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-event-title">
+    <div class="modal-glass-box">
+      <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close Modal">&times;</button>
+      
+      <div style="width: 100%; aspect-ratio: 16/9; border-radius: 16px; overflow: hidden; margin-bottom: 1.5rem; border: 1px solid var(--glass-border);">
+        <img id="modal-event-thumb" src="assets/event-hackathon.jpg" alt="Event preview" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div style="display: inline-block; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(99, 102, 241, 0.2); color: var(--cyan-accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.75rem;" id="modal-event-category">
+        Flagship Event
+      </div>
+
+      <h3 id="modal-event-title" style="font-family: 'Outfit', sans-serif; font-size: 1.6rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.75rem;">
+        Event Title
+      </h3>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 1.25rem; font-size: 0.88rem; color: var(--sinhgad-gold); margin-bottom: 1.25rem;">
+        <span id="modal-event-date">📅 Date</span>
+        <span id="modal-event-venue">📍 Venue</span>
+      </div>
+
+      <p id="modal-event-desc" style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 2rem;">
+        Event detailed description.
+      </p>
+
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <button type="button" class="btn btn-primary" onclick="alert('Registration opening soon on the official SIT ACES portal!')">Register Now</button>
+        <button type="button" class="btn btn-glass" onclick="document.getElementById('modal-close-btn').click()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Circular Scroll Progress & Back-to-Top Widget -->
+  <div id="floating-scroll-widget" class="floating-scroll-widget" aria-label="Scroll to top navigation">
+    <button id="scroll-to-top-btn" class="scroll-to-top-btn" title="Back to top" aria-label="Scroll back to top">
+      <svg class="progress-ring-svg" width="58" height="58" viewBox="0 0 58 58">
+        <circle class="progress-ring-bg" cx="29" cy="29" r="23" stroke-width="3"></circle>
+        <circle id="progress-ring-circle" class="progress-ring-circle" cx="29" cy="29" r="23" stroke-width="3"></circle>
+      </svg>
+      <div class="scroll-btn-inner">
+        <svg class="scroll-arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+        <span id="scroll-percent-text" class="scroll-percent-text">0%</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
