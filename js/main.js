@@ -751,6 +751,144 @@
     countUpObserver.observe(heroStatsRow);
   }
 
-  console.log('✨ ACES Website Engine initialized: Letterhead, Faculty Carousel, Events, Hierarchical Team Council, Continuous Scroll Interactions.');
+  // ==========================================
+  // 11. 3-LINES NAVIGATION DRAWER & SMOOTH SCROLL ENGINE
+  // Replaces static ACES brand with 3-line trigger to navigate pages & smooth scroll
+  // ==========================================
+  const navMenuToggleBtn = document.getElementById('nav-menu-toggle-btn');
+  const navDrawer = document.getElementById('nav-drawer');
+  const navDrawerBackdrop = document.getElementById('nav-drawer-backdrop');
+  const drawerCloseBtn = document.getElementById('drawer-close-btn');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  function openNavDrawer() {
+    if (!navDrawer) return;
+    navDrawer.classList.add('active');
+    if (navDrawerBackdrop) navDrawerBackdrop.classList.add('active');
+    if (navMenuToggleBtn) {
+      navMenuToggleBtn.classList.add('active');
+      navMenuToggleBtn.setAttribute('aria-expanded', 'true');
+    }
+    navDrawer.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeNavDrawer() {
+    if (!navDrawer) return;
+    navDrawer.classList.remove('active');
+    if (navDrawerBackdrop) navDrawerBackdrop.classList.remove('active');
+    if (navMenuToggleBtn) {
+      navMenuToggleBtn.classList.remove('active');
+      navMenuToggleBtn.setAttribute('aria-expanded', 'false');
+    }
+    navDrawer.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function toggleNavDrawer() {
+    if (navDrawer && navDrawer.classList.contains('active')) {
+      closeNavDrawer();
+    } else {
+      openNavDrawer();
+    }
+  }
+
+  if (navMenuToggleBtn) {
+    navMenuToggleBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      toggleNavDrawer();
+    });
+  }
+
+  if (drawerCloseBtn) {
+    drawerCloseBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeNavDrawer();
+    });
+  }
+
+  if (navDrawerBackdrop) {
+    navDrawerBackdrop.addEventListener('click', closeNavDrawer);
+  }
+
+  // Escape key handler for drawer
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navDrawer && navDrawer.classList.contains('active')) {
+      closeNavDrawer();
+    }
+  });
+
+  // Smooth Section Scrolling from Drawer and Nav Links
+  const allNavScrollLinks = document.querySelectorAll('a[data-scroll-to], .drawer-link, .nav-pill-item a');
+  allNavScrollLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      // Extract target hash if any
+      const hashIndex = href.indexOf('#');
+      if (hashIndex === -1) {
+        // Direct page navigation (e.g. faculties.html, council.html)
+        closeNavDrawer();
+        return;
+      }
+
+      const targetPath = href.substring(0, hashIndex);
+      const targetHash = href.substring(hashIndex + 1);
+
+      // Check if target is on current page
+      const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+      const isCurrentPage = !targetPath || targetPath === currentFile || (currentFile === '' && targetPath === 'index.html');
+
+      if (isCurrentPage && targetHash) {
+        const targetElement = document.getElementById(targetHash);
+        if (targetElement) {
+          e.preventDefault();
+          closeNavDrawer();
+
+          const stickyNav = document.getElementById('sticky-nav');
+          const navOffset = stickyNav ? stickyNav.offsetHeight + 18 : 80;
+          const elementY = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
+
+          window.scrollTo({
+            top: elementY,
+            behavior: 'smooth'
+          });
+
+          // Update active link classes
+          drawerLinks.forEach(l => l.classList.remove('active'));
+          link.classList.add('active');
+
+          if (history.pushState) {
+            history.pushState(null, null, `#${targetHash}`);
+          }
+        }
+      } else {
+        // Cross-page navigation: close drawer
+        closeNavDrawer();
+      }
+    });
+  });
+
+  // Smooth scroll to hash on direct page load if hash exists
+  if (window.location.hash) {
+    const initialHash = window.location.hash.substring(1);
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const targetElement = document.getElementById(initialHash);
+        if (targetElement) {
+          const stickyNav = document.getElementById('sticky-nav');
+          const navOffset = stickyNav ? stickyNav.offsetHeight + 18 : 80;
+          const elementY = targetElement.getBoundingClientRect().top + window.pageYOffset - navOffset;
+          window.scrollTo({
+            top: elementY,
+            behavior: 'smooth'
+          });
+        }
+      }, 350);
+    });
+  }
+
+  console.log('✨ ACES Website Engine initialized: Navy Blue Gradient Theme, 3-Lines Navigation Drawer, Scroll Engine & Letterhead active.');
 })();
 

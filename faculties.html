@@ -20,8 +20,8 @@
     <defs>
       <linearGradient id="brandGradientSvg" x1="0%" y1="0%" x2="100%" y2="100%">
         <stop offset="0%" stop-color="#0284c7" />
-        <stop offset="50%" stop-color="#4f46e5" />
-        <stop offset="100%" stop-color="#db2777" />
+        <stop offset="50%" stop-color="#1e40af" />
+        <stop offset="100%" stop-color="#0c2340" />
       </linearGradient>
     </defs>
   </svg>
@@ -73,8 +73,8 @@
 
       <!-- Lower Letterhead Ribbon -->
       <div class="letterhead-ribbon">
-        <span class="ribbon-text">ASSOCIATION OF COMPUTER ENGINEERING STUDENTS</span>
-        <span class="ribbon-tag">Dept. of Computer Engineering &bull; SIT Lonavala</span>
+        <span class="ribbon-text">Department of Computer Engineering powered by ACES</span>
+        <span class="ribbon-tag">SIT Lonavala &bull; STES</span>
       </div>
 
     </div>
@@ -85,10 +85,15 @@
        ======================================================================== -->
   <nav class="sticky-nav-bar" id="sticky-nav" aria-label="Main Navigation">
     <div class="sticky-nav-inner">
-      <a href="index.html" class="nav-brand-mini">
-        <img src="assets/aces-logo.png" alt="ACES Emblem" class="mini-aces-logo">
-        <span>ACES <span style="font-weight: 400; color: var(--cyan-accent); font-size: 0.9rem;">SIT</span></span>
-      </a>
+      <!-- 3-Lines Navigation Trigger Button (Replaces static ACES SIT brand) -->
+      <button class="nav-menu-toggle-btn" id="nav-menu-toggle-btn" aria-label="Toggle Navigation Menu" aria-expanded="false" title="Menu Navigation">
+        <span class="hamburger-box">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </span>
+        <span class="nav-menu-label">Menu</span>
+      </button>
 
       <ul class="nav-links-menu">
         <li class="nav-pill-item"><a href="index.html#home">Home</a></li>
@@ -106,6 +111,129 @@
       </a>
     </div>
   </nav>
+
+  <!-- ========================================================================
+       2B. OFFCANVAS SLIDE-IN NAVIGATION DRAWER
+       Navigate between pages & smoothly scroll to sections
+       ======================================================================== -->
+  <div id="nav-drawer-backdrop" class="nav-drawer-backdrop" aria-hidden="true"></div>
+  <aside id="nav-drawer" class="nav-drawer-panel" aria-label="Main Navigation Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <img src="assets/aces-logo.png" alt="ACES Logo" class="drawer-logo">
+        <div class="drawer-brand-text">
+          <span class="drawer-brand-title">ACES SIT</span>
+          <span class="drawer-brand-sub">Dept. of Computer Engineering</span>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close Navigation Menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <span class="drawer-section-title">Explore &bull; Scroll &bull; Navigate</span>
+      <ul class="drawer-links-list">
+        <li>
+          <a href="index.html#home" class="drawer-link">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">🏠</span>
+              <div>
+                <span class="drawer-link-text">Home</span>
+                <span class="drawer-link-desc">Overview &amp; key metrics</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Scroll &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#about" class="drawer-link">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">ℹ️</span>
+              <div>
+                <span class="drawer-link-text">About ACES</span>
+                <span class="drawer-link-desc">Department legacy &amp; student body</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Scroll &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#vision" class="drawer-link">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">🎯</span>
+              <div>
+                <span class="drawer-link-text">Vision &amp; Mission</span>
+                <span class="drawer-link-desc">Core goals &amp; institutional focus</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Scroll &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#events" class="drawer-link">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">📅</span>
+              <div>
+                <span class="drawer-link-text">Events &amp; Workshops</span>
+                <span class="drawer-link-desc">Freshers 2k26, Genesis AI, Galas</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Scroll &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="faculties.html" class="drawer-link active">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">👨‍🏫</span>
+              <div>
+                <span class="drawer-link-text">Department Faculties</span>
+                <span class="drawer-link-desc">HOD, Professors, TPO &amp; Staff</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Active</span>
+          </a>
+        </li>
+        <li>
+          <a href="council.html" class="drawer-link">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">👥</span>
+              <div>
+                <span class="drawer-link-text">Student Council</span>
+                <span class="drawer-link-desc">Executive leadership &amp; Core team</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Page &rarr;</span>
+          </a>
+        </li>
+        <li>
+          <a href="index.html#contact" class="drawer-link">
+            <div class="drawer-link-left">
+              <span class="drawer-link-icon">📞</span>
+              <div>
+                <span class="drawer-link-text">Contact Us</span>
+                <span class="drawer-link-desc">Department inquiries &amp; location</span>
+              </div>
+            </div>
+            <span class="drawer-badge">Scroll &rarr;</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="drawer-footer">
+      <a href="index.html#contact" class="btn btn-primary drawer-footer-btn">
+        <span>Connect With ACES</span>
+      </a>
+      <div class="drawer-footer-note">
+        Sinhgad Institute of Technology, Lonavala<br>
+        Department of Computer Engineering
+      </div>
+    </div>
+  </aside>
 
   <!-- ========================================================================
        3. SUBPAGE HERO & BREADCRUMB
